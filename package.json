@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-route": "^3.2.0",
+    "koa-router": "^9.4.0",
+    "winston": "^3.3.3",
+    "winston-transport": "^4.4.0"
+  },
+  "name": "logger-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.27"
+  },
+  "keywords": [],
+  "author": "",
+  "description": ""
+}
