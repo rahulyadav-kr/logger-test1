@@ -1,16 +1,7 @@
-import {WinstonLogger} from "./winstonLogger"
-// console.log('%cconsole.log', 'color: green;');
-// console.info('%cconsole.info', 'color: green;');
-// console.debug('%cconsole.debug', 'color: green;');
-// console.warn('%cconsole.warn', 'color: green;');
-// console.error('%cconsole.error', 'color: green;');
-
-WinstonLogger.log('info', 'server is running',{
-    message: 'This is message',
-    startTimeStamp: Date.now(),
-    duration: 1234,
-   // level: Level.Info,
-    routeName: '/'
-})
-
-
+import { WinstonLogger } from "./winstonLogger";
+WinstonLogger.log("warn", "", {
+  message: "This is message",
+  startTimeStamp: Date.now(),
+  duration: "duration is 1234",
+  routeName: "route name is /",
+});
