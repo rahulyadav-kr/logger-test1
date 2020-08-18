@@ -4,7 +4,8 @@ import {WinstonLogger} from "./winstonLogger"
 // console.debug('%cconsole.debug', 'color: green;');
 // console.warn('%cconsole.warn', 'color: green;');
 // console.error('%cconsole.error', 'color: green;');
-WinstonLogger.log('error', 'error',{
+
+WinstonLogger.log('info', 'server is running',{
     message: 'This is message',
     startTimeStamp: Date.now(),
     duration: 1234,

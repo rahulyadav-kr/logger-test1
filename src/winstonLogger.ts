@@ -3,22 +3,22 @@
  const fs = require ('fs')
 class ConsoleTransport extends Transport {
   log(message:any) {
-    switch (message) {
+    console.log(message)
+    switch (message.level) {
       case 'info':
         console.log(message);
         //console.log("info is running")
         break
       
       case 'error':{
-        console.error("this is it yeah");
         console.error(message)
         break
       }
       case 'warn':
         console.warn();
         break
-        default:
-          console.log(message)
+        // default:
+        //   console.log(message)
 
      
     }
