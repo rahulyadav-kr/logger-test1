@@ -1,13 +1,35 @@
+// {
+//   "version": "2.0.2",
+//   "compilerOptions": {
+//     "outDir": "./dist",
+//     "lib": ["es5", "es6","DOM"],
+//     "target": "es6",
+//     "module": "commonjs",
+//     "moduleResolution": "node",
+//     "emitDecoratorMetadata": true,
+//     "experimentalDecorators": true,
+//   },
+//   "include": ["./src/**/*"]
+// }
+
 {
-  "version": "2.0.2",
+
+  /* Specifies an array of filenames or patterns to include in the program. These filenames are 
+   resolved relative to the directory containing the tsconfig.json file.
+   */
+  "include": ["src/**/*"],
   "compilerOptions": {
-    "outDir": "./dist",
-    "lib": ["es5", "es6","DOM"],
-    "target": "es6",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-  },
-  "include": ["./src/**/*"]
+     "allowJs": true,  /* enables the import style inside the project */
+     "declaration": true, // generate declaration of the each file i.e fileName.d.ts
+     "declarationMap": true, // redirects to fileName.ts if you click on goToDefinition in vsCode
+     "lib": ["es6", "es2017","DOM"],
+     "module": "commonjs", // Sets the module system for the program
+     "outDir": "./dist" /* Redirect output structure to the directory. */,
+     "target": "es5" /* */,
+     "strict": true /* Enable all strict type-checking options. */,
+     
+     "esModuleInterop": true,
+     "moduleResolution": "Node",
+     "plugins": [{ "transform": "ts-transformer-imports" }]
+  }
 }

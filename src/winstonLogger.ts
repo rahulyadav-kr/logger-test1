@@ -1,34 +1,42 @@
-import winston =  require('winston')
-import Transport = require ("winston-transport")
-
-class CustomTransport extends Transport {
-  log(message: any) {
-    switch (message.level) {
-      case "info":{
+ const winston = require ('winston')
+ const Transport = require ("winston-transport")
+ const fs = require ('fs')
+class ConsoleTransport extends Transport {
+  log(message:any) {
+    switch (message) {
+      case 'info':
         console.log(message);
-        console.log("info is running")
-        break;
+        //console.log("info is running")
+        break
+      
+      case 'error':{
+        console.error("this is it yeah");
+        console.error(message)
+        break
       }
-      case "error":
-        console.error(message);
-        break;
-      case "warn":
+      case 'warn':
         console.warn();
-        break;
-      default:
-        console.log(message);
+        break
+        default:
+          console.log(message)
+
+     
     }
   }
 }
-
+class FileTransport extends Transport{
+  log(message: any) {
+    const data = message.message
+  fs.writeFile('log1.txt', data+"   "+message.startTimeStamp+"   "+message.duration , 'utf8',()=>{} );
+}
+}
 export const WinstonLogger = winston.createLogger({
   level: "info",
-  format: winston.format.json(),
-  transports: [new CustomTransport()],
-  // transports: new winston.transports.File({
-  //   filename: 'log.text'
-  // })
+  format: winston.format.combine(winston.format.json(),winston.format.colorize()),
+  transports: 
+  [new ConsoleTransport(),
+   new FileTransport()
+  ],
 })
 
-export const createWinstonLogger = () => WinstonLogger;
 

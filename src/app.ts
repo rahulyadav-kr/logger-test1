@@ -1,9 +1,15 @@
-import {createWinstonLogger} from '.'
-const logger = createWinstonLogger();
-logger.log('info', 'hi',{
-    message: 'server is running on : http//3000',
+import {WinstonLogger} from "./winstonLogger"
+// console.log('%cconsole.log', 'color: green;');
+// console.info('%cconsole.info', 'color: green;');
+// console.debug('%cconsole.debug', 'color: green;');
+// console.warn('%cconsole.warn', 'color: green;');
+// console.error('%cconsole.error', 'color: green;');
+WinstonLogger.log('error', 'error',{
+    message: 'This is message',
     startTimeStamp: Date.now(),
     duration: 1234,
-    //level: LogLevel.Info,
+   // level: Level.Info,
     routeName: '/'
 })
+
+
